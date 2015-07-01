@@ -74,22 +74,40 @@ printObject({ firstName: 'pork', lastName: 'chops' });
 
 // >>>>>>>> Start Number 7 <<<<<<<<
 var vowels = function(string){
-	var vowelList = ['a', 'e', 'i', 'o', 'u'];
-	var output = []
-	
-	for (var i = 0; i < string.length; i++) {
-	
-		var vowel = vowelList.indexOf(string.charAt(i))
-	
-		if ( vowel !== -1) {
-			output.push(vowelList[vowel]);
-		}
-	
-	} return output
+	var vowels = {
+		a : 'a',
+		e : 'e',
+		i : 'i',
+		o : 'o',
+		u : 'u',
+	}
+	var stringArray = string.split('');
+	var output = stringArray.filter(function(element){
+		return element.toLowerCase() in vowels;
+	})
+	return output;
 };
 
 console.log(vowels('What evil odd ducks!'));
 // >>>>>>>> End #7 <<<<<<<<
+
+// >>>>>>>> Start Number 8 <<<<<<<<
+var twins = function(array) {
+	var test = 0
+
+	for (var i = 0; i < (array.length - 1); i += 2) {
+		if (array[i] === array[ i + 1 ]) {
+			test++
+			console.log(test);
+		}
+	}
+	return test === array.length/2;
+};
+
+console.log(twins(['a', 'a', 'b', 'b', 'c', 'c']));
+// >>>>>>>> End #8 <<<<<<<<
+
+
 
 
 
