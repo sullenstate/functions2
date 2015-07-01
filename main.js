@@ -95,18 +95,46 @@ console.log(vowels('What evil odd ducks!'));
 var twins = function(array) {
 	var test = 0
 
-	for (var i = 0; i < (array.length - 1); i += 2) {
+	for (var i = 0; i < (array.length ); i += 2) {
 		if (array[i] === array[ i + 1 ]) {
 			test++
-			console.log(test);
 		}
 	}
 	return test === array.length/2;
 };
 
-console.log(twins(['a', 'a', 'b', 'b', 'c', 'c']));
+console.log(twins(['a', 'a', 'b', 'b']));
 // >>>>>>>> End #8 <<<<<<<<
 
+// >>>>>>>> Start Number 9 <<<<<<<<
+var or = function(array){
+
+	// var test = array.filter( function(element) {
+	// 	return element;
+	// });
+
+	// return test.length > 0
+
+	for (var i = 0; i < array.length; i++) {
+		if (array[i] === true) {
+			return 'Exercise 9 : Array [' + array + '] contains true = ' + true;
+		}
+	};return 'Exercise 9 : Array [' + array + '] contains true = ' + false;
+};
+
+console.log(or([false, false, false]));
+// >>>>>>>> End #9 <<<<<<<<
+
+// >>>>>>>> Start Number 10 <<<<<<<<
+var unique = function(array){
+	var obj = {}
+	for (var i = 0; i < array.length; i++) {
+		obj[array[i]] =  null;
+	}; return Object.keys(obj);
+};
+
+console.log(unique(['todd', 'avery', 'maria', 'avery']));
+// >>>>>>>> End #10 <<<<<<<<
 
 
 
